@@ -3,7 +3,7 @@
 # @Time : 2019-12-13 15:59
 
 __author__ = 'Ted'
-
+# Version for Windows
 
 import tkinter
 from tkinter import font,messagebox
@@ -20,7 +20,7 @@ class LuckyDraw:
     def __init__(self,data):
         # 准备好界面
         self.root = tkinter.Tk()
-        self.root.title("水泊梁山 2019 圣诞大抽奖")
+        self.root.title("2019 圣诞大抽奖")
         self.root.geometry('1360x700+0+0')  # 定义界面大小
         self.root.resizable(False, False)
 
@@ -49,19 +49,19 @@ class LuckyDraw:
         img_03 = Image.open("static/003.png")
         label_03 = ImageTk.PhotoImage(img_03)
         self.third = tkinter.Label(self.root, image=label_03)
-        self.third.place(x=920, y=530, width=75, height=50)
+        self.third.place(x=926, y=533, width=80, height=54)
         self.third.bind("<Button-1>",self.set_third)
 
         img_02 = Image.open("static/002.png")
         label_02 = ImageTk.PhotoImage(img_02)
         self.second = tkinter.Label(self.root, image=label_02)
-        self.second.place(x=960, y=380, width=78, height=53)
+        self.second.place(x=1218, y=362, width=80, height=55)
         self.second.bind("<Button-1>",self.set_second)
 
         img_01 = Image.open("static/001.png")
         label_01 = ImageTk.PhotoImage(img_01)
         self.first = tkinter.Label(self.root, image=label_01)
-        self.first.place(x=1070, y=180, width=80, height=55)
+        self.first.place(x=1108, y=35, width=80, height=54)
         self.first.bind("<Button-1>",self.set_first)
 
         # 添加键盘控制
@@ -101,11 +101,9 @@ class LuckyDraw:
         # self.first = tkinter.Button(self.root, text = '一等奖', command = self.set_first,bg='gold')
         # self.first.place(x=1070, y=180, width=80, height=50)
 
-
-
-
-        self.btn1 = tkinter.Button(self.root, text='', bg='red')
-        self.btn1.config(font=("Courier", 30))
+        displayfont = font.Font(size=22)
+        self.btn1 = tkinter.Button(self.root, text='', bg='lightyellow',font=displayfont)
+        # self.btn1.config(font=("Courier", 30))
         self.btn1.place(x=640, y=500, width=100, height=70)
 
         self.source = tkinter.Text(self.root,bg="navajowhite",fg="dimgray")
@@ -113,17 +111,17 @@ class LuckyDraw:
         self.source.insert(tkinter.END,("、").join(self.data))
 
         myFont = font.Font(size=20)
-        self.target_3 = tkinter.Listbox(self.root,height=5,font=myFont,bg="burlywood",bd=0,fg="saddlebrown")
-        self.target_3.place(x=1020, y=520, width=70, height=130)
+        self.target_3 = tkinter.Listbox(self.root,height=5,font=myFont,bg="burlywood",bd=1,fg="saddlebrown")
+        self.target_3.place(x=1020, y=455, width=110, height=145)
 
-        self.target_3_sub = tkinter.Listbox(self.root,height=5,font=myFont,bg="burlywood",bd=0,fg="saddlebrown")
-        self.target_3_sub.place(x=1140, y=520, width=70, height=130)
+        self.target_3_sub = tkinter.Listbox(self.root,height=5,font=myFont,bg="burlywood",bd=1,fg="saddlebrown")
+        self.target_3_sub.place(x=1170, y=455, width=110, height=145)
 
-        self.target_2 = tkinter.Listbox(self.root,height=5,font=myFont,bg="gainsboro",bd=0,fg="dimgrey")
-        self.target_2.place(x=1080, y=380, width=70, height=130)
+        self.target_2 = tkinter.Listbox(self.root,height=5,font=myFont,bg="gainsboro",bd=1,fg="dimgrey")
+        self.target_2.place(x=1095, y=295,  width=110, height=145)
 
-        self.target_1 = tkinter.Listbox(self.root,height=5,font=myFont,bg="lemonchiffon",bd=0,fg="olive")
-        self.target_1.place(x=1080, y=240, width=70, height=130)
+        self.target_1 = tkinter.Listbox(self.root,height=5,font=myFont,bg="lemonchiffon",bd=1,fg="olive")
+        self.target_1.place(x=1095, y=135, width=110, height=145)
 
         self.target = self.target_3
 
